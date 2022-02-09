@@ -4,7 +4,7 @@ from django.contrib.auth import get_user_model
 class Komandalar(models.Model):
     name = models.CharField(max_length=100)
     text = models.TextField(default="")
-    data = models.DateField(auto_now_add=True)
+    data = models.DateField()
     category = models.ForeignKey('Category', related_name="category", on_delete=models.PROTECT)
     image = models.CharField(max_length=100)
     achko = models.IntegerField()
