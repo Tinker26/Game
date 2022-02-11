@@ -22,6 +22,7 @@ from django.conf.urls.static import static
 from rest_framework.routers import DefaultRouter
 from game.views import *
 
+
 from drf_yasg import openapi
 from rest_framework import permissions
 from drf_yasg.views import get_schema_view
@@ -46,6 +47,7 @@ schema_view = get_schema_view(
 router = DefaultRouter()
 router.register('Komandalar', KomandalarViewSet)
 router.register('category', CategoryViewSet)
+router.register('Blog', BlogViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),

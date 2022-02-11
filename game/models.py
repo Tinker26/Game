@@ -9,8 +9,8 @@ class Komandalar(models.Model):
     image = models.CharField(max_length=100)
     achko = models.IntegerField()
     class Meta():
-        verbose_name = 'Kiyim'
-        verbose_name_plural = 'Kiyimlar'
+        verbose_name = 'Komanda'
+        verbose_name_plural = 'Komandalar'
         ordering = ['name']
 
     def __str__(self):
@@ -18,7 +18,7 @@ class Komandalar(models.Model):
 
 
 class Category(models.Model):
-    name = models.CharField(max_length=300)
+    name = models.CharField(max_length=300) 
 
     class Meta():
         ordering = ['name']
@@ -26,6 +26,21 @@ class Category(models.Model):
     class Meta():
         verbose_name = 'Categorya'
         verbose_name_plural = 'Categoryalar'
+        ordering = ['name']
+
+    def __str__(self):
+        return self.name
+
+
+class Blog(models.Model):
+    name = models.CharField(max_length=100)
+    about = models.TextField(default="")
+    category = models.ForeignKey('Category', related_name="categorya", on_delete=models.PROTECT)
+    image = models.CharField(max_length=100)
+
+    class Meta():
+        verbose_name = 'blog'
+        verbose_name_plural = 'Blog'
         ordering = ['name']
 
     def __str__(self):

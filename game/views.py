@@ -6,14 +6,13 @@ from .serializers import *
 class KomandalarViewSet(viewsets.ModelViewSet):
     queryset = Komandalar.objects.all()
     serializer_class = KomandalarSerializer
-    # pagination_class = LargeResultsSetPagination
-    # filter_backends = [filters.OrderingFilter,DjangoFilterBackend,filters.SearchFilter]
-    # ordering_fields = ['name','price']
-    # ordering = ['price']
-    # search_fields = ['^name']
-    # filterset_fields = ['name','price']
-    # pagination_class = LimitOffsetPagination
+
 
 class CategoryViewSet(viewsets.ModelViewSet):
     queryset = Category.objects.all()
     serializer_class = CategorySerializer
+
+
+class BlogViewSet(viewsets.ModelViewSet):
+    queryset = Blog.objects.all()
+    serializer_class = BlogSerializer
