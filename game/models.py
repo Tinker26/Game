@@ -6,7 +6,7 @@ class Komandalar(models.Model):
     text = models.TextField(default="")
     data = models.DateField()
     category = models.ForeignKey('Category', related_name="category", on_delete=models.PROTECT)
-    image = models.CharField(max_length=300)
+    image = models.ImageField(upload_to = 'photoes/products')
     achko = models.IntegerField()
     class Meta():
         verbose_name = 'Komanda'
@@ -36,7 +36,7 @@ class Blog(models.Model):
     name = models.CharField(max_length=100)
     about = models.TextField(default="")
     category = models.ForeignKey('Category', related_name="categorya", on_delete=models.PROTECT)
-    image = models.CharField(max_length=300)
+    image = models.ImageField(upload_to = 'photoes/products')
 
     class Meta():
         verbose_name = 'blog'

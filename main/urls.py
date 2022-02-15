@@ -21,7 +21,8 @@ from django.conf.urls.static import static
 
 from rest_framework.routers import DefaultRouter
 from game.views import *
-
+from blog.views import *
+from image.views import *
 
 from drf_yasg import openapi
 from rest_framework import permissions
@@ -48,6 +49,10 @@ router = DefaultRouter()
 router.register('Komandalar', KomandalarViewSet)
 router.register('category', CategoryViewSet)
 router.register('Blog', BlogViewSet)
+router.register('BlogCategoriya', CategoryaViewSet)
+router.register('Image', ImageViewSet)
+router.register('ImageCategoriya', CategoryasViewSet)
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
