@@ -6,7 +6,7 @@ class Komandalar(models.Model):
     text = models.TextField(default="")
     data = models.DateField()
     category = models.ForeignKey('Category', related_name="category", on_delete=models.PROTECT)
-    image = models.ImageField(upload_to = 'photoes/products')
+    image = models.CharField(max_length=300)
     achko = models.IntegerField()
     class Meta():
         verbose_name = 'Komanda'

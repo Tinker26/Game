@@ -5,7 +5,7 @@ class Blog(models.Model):
     name = models.CharField(max_length=100)
     about = models.TextField(default="")
     category = models.ForeignKey('Categorya', related_name="categorya", on_delete=models.PROTECT)
-    image = models.ImageField(upload_to = 'BlogPhotoes/products')
+    image = models.CharField(max_length=300)
     data = models.CharField(max_length=300)
 
     class Meta():
